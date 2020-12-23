@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>몽고디비 연결</title>
+		<link rel="stylesheet" href="static/css/bootstrap.css">
+		<link rel="stylesheet" href="static/css/codingBooster.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1" aria-expaned="false">
+					<span class="sr-only"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/index">녹내장 AI</a>
+				</div>
+				<div class="collapse navbar-collapse" id= "bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="/index">소개<span class="sr-only"></span></a></li>
+						<li><a href= "/predict" >판독</a></li>
+						<li><a href= "/mongo" >환자 데이터</a></li>
+					</ul>
+					<form class="navbar-form navbar-left">
+						<div class="form-group">
+							<input type="text" class="form-control"
+							placeholder="내용을 입력하세요.">
+						</div>
+						<button type="submit" class="btn btn-default">검색</button>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/">로그아웃</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div>
+			<h1>[MongoDB]</h1>
+			<h3>환자 데이터 정보 테이블을 확인하고 검색, 삭제할 수 있습니다.</h3>
+			<br>
+			<!--
+			</form>
+				<form action = "/print" method = "POST" enctype = "multipart/form-data">
+					<조회> : 환자의 주민등록번호를 입력하세요.
+					<br><input type = "text" name = "rnn" placeholder="ex)910111-1111111" />
+					<input type = "submit"/><br><br>
+                    <수정> : 등록날짜와 환자의 주민등록번호를 입력하세요.
+                    <br><input type = "text" name = "date" placeholder="2020-10-10" />
+                    <input type = "text" name = "rrn" placeholder="ex)910111-1111111" />
+                    <input type = "submit"/><br><br>
+                    <삭제> : 등록날짜와 환자의 주민등록번호를 입력하세요.
+                    <br><input type = "text" name = "date" placeholder="2020-10-10" />
+                    <input type = "text" name = "rnn" placeholder="ex)910111-1111111"/>
+                    <input type = "submit"/><br><br>
+        		<br>
+        		<br>
+      		</form>
+      	-->
+		</div>
+		<div>
+			<table class = "dmlForm">
+				<tbody>
+					<tr>
+						<th>
+							<h4><데이터 테이블></h4>
+						</th>
+						<th>
+						<form action="/selectPage" method="POST">
+							<button>검색</button>
+						</form>
+						</th>
+						<!--
+						<th>
+						<form action="/editPage" method="POST">
+							<button>수정</button>
+						</form>
+						</th>
+						-->
+						<th>
+						<form action="/removePage" method="POST">
+							<button>삭제</button>
+						</form>
+						</th>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table">
+		        <thead>
+		            <tr>
+		                <th>DATE</th>
+		                <th>NAME</th>
+		                <th>AGE</th>
+		                <th>REGION</th>
+		                <th>RRN</th>
+		                <th>RESULT</th>
+		                <th>IMG_PATH</th>
+		            <tr>
+		        </thead>
+		        <tbody>
+		            {% for person in people %}
+		            <tr>
+		                <td>{{ person.DATE }}</td>
+		                <td>{{ person.NAME }}</td>
+		                <td>{{ person.AGE }}</td>
+		                <td>{{ person.REGION }}</td>
+		                <td>{{ person.RRN }}</td>
+		                <td>{{ person.RESULT }}</td>
+		                <td>{{ person.IMG_PATH }}</td>
+		            </tr>
+		            {% endfor %}
+		        </tbody>
+		</table>
+			<!--
+			<p>--------------------------------</p>
+			{% for i in data %}
+				<p>이름: {{i.NAME}}</p>
+				<p>내용: {{i.content}}</p>
+				<p>-------------------</p>
+			{% endfor %}
+		-->
+		</div>
+		<footer style="background-color: #000000; color: #ffffff">
+			<div class="container">
+				<br>
+				<div class="row">
+					<div class="col-sm-2" style="text-align: center"><h5>Copyright &copy; 2020</h5><h5>여혜인(Yeo Hyein)</h5>
+					</div>
+					<div calss="col--sm-4"><h4>대표자 소개</h4><p>순천향대 컴퓨터소프트웨어공학과 17학번 입니다.</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+	</body>
+</html>

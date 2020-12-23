@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name='viewport' content="width=device-width", initial-scale="1">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>판독</title>
+		<link rel="stylesheet" href="static/css/bootstrap.css">
+		<link rel="stylesheet" href="static/css/codingBooster.css">
+	</head>
+	<body>
+		<style type="text/css">
+			.jumbotron{
+				background-image: url('static/images/predictpage.jpg');
+				background-size: 1200px 300px;
+				background-repeat: no-repeat;
+				text-shadow: black 0.2em 0.2em 0.2em;
+				color: black;
+			}
+			legend {
+				font-weight: bold;
+				font-size: 30px;
+			}
+			input.file {
+				text-align: right;
+			}
+		</style>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1" aria-expaned="false">
+					<span class="sr-only"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/index">녹내장 AI</a>
+				</div>
+				<div class="collapse navbar-collapse" id= "bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="/index">소개<span class="sr-only"></span></a></li>
+						<li><a href= "/predict" >판독</a></li>
+						<li><a href= "/mongo" >환자 데이터</a></li>
+					</ul>
+					<form class="navbar-form navbar-left">
+						<div class="form-group">
+							<input type="text" class="form-control"
+							placeholder="내용을 입력하세요.">
+						</div>
+						<button type="submit" class="btn btn-default">검색</button>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/">로그아웃</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="jumbotron">
+				<h1 class="text-center">환자의 녹내장을 판독합니다.</h3>
+				<br>
+				<br>
+				<br>
+				<br>
+			</div>
+		</div>
+		 <!--<form align="center" action = "/print" accept-charset="utf-8" name = "person_info" method = "POST">-->
+		<form align="center" action = "/print" method = "POST" enctype = "multipart/form-data">
+			<legend>환자 개인정보 입력</legend>
+                    이름 : <input type = "text" name = "name"/>
+                    나이 : <input type = "number" name = "age"/>
+                    거주지역 : <input type = "text" name = "region"/>
+                    주민번호 : <input type = "text" name = "identyNumber" placeholder="ex) 970111-1234567" /><br><br><br>
+            <legend>Reference Images</legend>
+            	<div class="f" align="center">
+        			<input type = "file" name = "file" />
+        		</div>
+        		<div class="sub" align="right">
+        			<input type = "submit"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        		</div>
+        	<br>
+        	<br>
+      	</form>
+      	<footer style="background-color: #000000; color: #ffffff">
+			<div class="container">
+				<br>
+				<div class="row">
+					<div class="col-sm-2" style="text-align: center"><h5>Copyright &copy; 2020</h5><h5>여혜인(Yeo Hyein)</h5>
+					</div>
+					<div calss="col--sm-4"><h4>대표자 소개</h4><p>순천향대 컴퓨터소프트웨어공학과 17학번 입니다.</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+	</body>
+</html>

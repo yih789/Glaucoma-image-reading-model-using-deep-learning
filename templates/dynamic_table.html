@@ -1,0 +1,26 @@
+<table class="table">
+       <thead>
+           <tr>
+               <th>DATE</th>
+               <th>NAME</th>
+               <th>AGE</th>
+               <th>REGION</th>
+               <th>RRN</th>
+               <th>RESULT</th>
+               <th>IMG_PATH</th>
+           <tr>
+       </thead>
+       <tbody>
+           {% for person in people %}
+           <tr>
+               <td>{{ person.DATE }}</td>
+               <td>{{ person.NAME }}</td>
+               <td>{{ person.AGE }}</td>
+               <td>{{ person.REGION }}</td>
+               <td>{{ person.RRN }}</td>
+               <td>{{ person.RESULT }}</td>
+               <td>{{ person.IMG_PATH }}</td>
+           </tr>
+           {% endfor %}
+       </tbody>
+</table>

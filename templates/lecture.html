@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name='viewport' content="width=device-width", initial-scale="1">
+		<title>코딩 부스터</title>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/codingBooster.css">
+		
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1" aria-expaned="false">
+					<span class="sr-only"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">코딩 부스터</a>
+				</div>
+				<div class="collapse navbar-collapse" id= "bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="index.html">소개<span class="sr-only"></span></a></li>
+						<li><a href="instructor.html">강사진</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+							aria-haspopup="true" aria-expanded="false">강의<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="lecture.html?lectureName=C">C언어</a></li>
+								<li><a href="lecture.html?lectureName=Java">JAVA</a></li>
+								<li><a href="lecture.html?lectureName=Android">안드로이드</a></li>
+							</ul>
+						</li>
+					</ul>
+					<form class="navbar-form navbar-left">
+						<div class="form-group">
+							<input type="text" class="form-control"
+							placeholder="내용을 입력하세요.">
+						</div>
+						<button type="submit" class="btn btn-default">검색</button>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+							aria-haspopup="true" aria-expanded="false">접속하기<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="loginForm.html">로그인</a></li>
+								<li><a href="registerForm.html">회원가입</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="row">
+				<ul class="list-group">
+					<a href="#" class="list-group-item active">1강 Hello World</a>
+					<a href="#" class="list-group-item">2강 변수와 상수</a>
+					<a href="#" class="list-group-item">3강 데이터 타입</a>
+					<a href="#" class="list-group-item">4강 연산자</a>
+					<a href="#" class="list-group-item">5강 조건문과 반복문</a>
+				</ul>
+			</div>
+			<div class="row">
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rI8NRQsAS_s">
+					</iframe>
+			</div>
+			<hr>
+			<div class="row">
+				<p>
+					첫 번째 강의는 C언어 개발 환경을 설치한 이후에 "Hello World"를 출력해보는 시간을 가집니다.
+				</p>
+				<pre class="pre-scrollable">
+# include &lt;stdio.h&gt;
+
+int main(void)
+{
+	printf("Hello World");
+}
+				</pre>
+			</div>
+		</div>
+		<div class="container">
+			<hr>
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label>댓글: </label>
+					<textarea class="form-control" rows="5" id="commentContent" name="commentContent"></textarea>
+					<br>
+					<button type="submit" class="btn pull-right">등록</button>
+				</div>
+			<hr>
+			</form>
+		</div>
+		<footer style="background-color: #000000; color: #ffffff">
+			<div class="container">
+				<br>
+				<div class="row">
+					<div class="col-sm-2" style="text-align: center"><h5>Copyright &copy; 2020</h5><h5>여혜인(Yeo Hyein)</h5>
+					</div>
+					<div calss="col--sm-4"><h4>대표자 소개</h4><p>순천향대 컴퓨터소프트웨어공학과 17학번 입니다.</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+	</body>
+</html>
